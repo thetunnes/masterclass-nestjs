@@ -6,10 +6,13 @@ import { PrismaRocketMembersRepository } from './repositories/prisma/prisma-rock
 
 @Module({
   imports: [],
-controllers: [AppController],
-  providers: [PrismaService, {
-    provide: RocketMembersRepository,
-    useClass: PrismaRocketMembersRepository
-  }],
+  controllers: [AppController],
+  providers: [
+    PrismaService,
+    {
+      provide: RocketMembersRepository,
+      useClass: PrismaRocketMembersRepository,
+    },
+  ],
 })
 export class AppModule {}
